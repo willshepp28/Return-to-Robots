@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First</title>
+    <link href="/assets/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+
+{{#user}}
+    
+    <div class="user-container">
+
+        <div class="top-section">
+
+            <img class=" user-image img-section" src="{{avatar}}"></img>
+
+            <div class="info-container left">
+                <h1>{{name}}</h1>
+
+                <div class="user-info left">
+                    
+
+                <div class="contain">
+
+                    {{#if address.city}}
+                     <p> {{address.city}}</p>
+                    {{#if address.country}}
+                    <p> {{address.country}}</p>
+                     {{else}}
+                     {{/if}}
+                     {{else}}
+                     {{/if}}
+                
+
+
+
+
+                    {{!--{{#if address.city}}
+                    {{#if address.state_or_province}}
+                    <p> {{address.city}} , {{address.state_or_province}} </p>   
+                    {{else}}
+
+                    {{/if}}
+                    {{else}}
+                    {{/if}}--}}
+
+
+
+                    {{#if job}}
+                    {{#if company}}
+                    <p>| {{job}}, {{company}}</p>
+                    {{else}}
+                     <p class="black">|</p><p class="red">Available for hire</p>
+                    {{/if}}
+                    {{else}}
+                    <p class="black">|</p><p class="red">Available for hire</p>
+                    {{/if}}
+                     </div>
+
+                    <p>{{email}} | {{phone}}</p>
+                   
+                </div>
+                  </div>
+        
+        </div>
+                <div class="user-talent">
+
+                    {{#if university}}
+                    <div class="education"><p><strong>Education: </strong> {{university}} </p></div>
+                    {{else}}
+                    
+                    {{/if}}
+
+                    <div class="skills">
+
+                        <h3>Skills</h3>
+                        <ul>
+                            {{#each skills}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+
+
+                    </div>
+                </div>
+            
+
+        </div>
+    </div>
+ 
+{{/user}}
+
+</body>
+</html>
+
+

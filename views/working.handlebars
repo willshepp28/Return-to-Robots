@@ -1,0 +1,23 @@
+{{#users}}
+    <div class="user-thumbnail">
+        
+        <img class="user-image" src="{{avatar}}"></img>
+
+        <div class="user-info">
+            
+        <h3 class="user-name">{{name}}</h1><br><br>
+
+           {{#if job}}
+            {{#if company}}
+           <a href="/profilelook/{{id}}"> <p class="user-occupation">{{job}}, {{company}}</p></a>
+            {{else}}
+             <a href="/profilework/{{id}}"><p class="red">Available for hire</p></a>
+              {{/if}}
+            {{else}}
+            <a href="/profilework/{{id}}"><p class="red">Available for hire</p></a>
+           
+            {{/if}}
+          
+        </div>
+    </div>
+{{/users}}

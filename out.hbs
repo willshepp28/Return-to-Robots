@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+
+{{#users}}
+    <div class="user-thumbnail">
+        
+        <img class="user-image" src="{{avatar}}"></img>
+
+        <div class="user-info">
+            
+        <h3 class="user-name">{{name}}</h1><br><br>
+
+           {{#if job}}
+            {{#if company}}
+           <a href="views/info/{{id}}"> <p class="user-occupation">{{job}}, {{company}}</p></a>
+            {{else}}
+             <a href="views/info/{{id}}"><p class="red">Available for hire</p></a>
+              {{/if}}
+            {{else}}
+            <a href=""><p class="red">Available for hire</p></a>
+           
+            {{/if}}
+          
+        </div>
+    </div>
+{{/users}}
+
+</body>
+</html>
